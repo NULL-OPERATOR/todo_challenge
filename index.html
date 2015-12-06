@@ -1,36 +1,41 @@
 <!doctype html>
-<html lang="en" ng-app="todo">
+<html lang="en" ng-app="todoApp">
   <head>
     <meta charset="utf-8">
     <title>2do</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <!-- /JS -->
-    <script src="js/app.js"></script>
-    <script src="js/controller.js"></script>
-
-    <!-- new links -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
 
+    <script src="js/app.js"></script>
+    <script src="js/firebaseFactory.js"></script>
+    <script src="js/todoController.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="todoController as todoCtrl">
     <div class="header">
       <div>
         <h1>SO MUCH TO DO</h1>
       </div>
     </div>
-    <!-- <div class="list-group-item">
-      <form ng-submit="addTodo()">
-        <input class='todo' type="text" ng-model="todoText">
-        <input type="submit" value="Add">
-      </form>
-    </div> -->
 
-    <div>
+      <div class="ui" ng-repeat="todo in todoCtrl.todos">
+        <input type="checkbox" ng-model="todo.done">
+        <input class="todo" type="text" value="{{todo.text}}">
+        <button class="button downTodo" ng-click="todoCtrl.moveTodo($index, 'not up')">down</button>
+        <button class="button upTodo" ng-click="todoCtrl.moveTodo($index, 'up')">up</button>
+        <button class="button delTodo" ng-click="todoCtrl.deleteTodo($index)">del</button>
+      </div>
 
-    </div>
+  <div class="ui icon buttons">
+    <form ng-submit="todoCtrl.addTodo()">
+      <input type="text" ng-model="todoCtrl.todoText">
+      <input class="enterTodo" type="submit" value="Add">
+    </form>
+  </div>
 
   </body>
 </html>

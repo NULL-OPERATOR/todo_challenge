@@ -1,1 +1,1 @@
-var todoApp = angular.module('todoApp', ['ngResource']);
+var todoApp = angular.module('todoApp', ['ngResource', "firebase"]);
