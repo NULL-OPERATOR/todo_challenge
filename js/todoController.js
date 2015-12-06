@@ -5,19 +5,8 @@ todoApp.controller('todoController', [ "Todos",
   var ref = new Firebase('intense-torch-7748.firebaseIO.com')
   self.todos = Todos;
 
-  // self.addTodo = function() {
-  //   var newTodo = {
-  //     text: self.todoText,
-  //     done: false
-  //   };
-  //   self.todos.push(newTodo);
-  //   self.todoText = '';
-  // };
   self.addTodo = function() {
-    // var newTodo = {
-    //   text: self.todoText,
-    //   done: false
-    // };
+
     self.todos.$add({
       text: self.todoText,
       done: false
