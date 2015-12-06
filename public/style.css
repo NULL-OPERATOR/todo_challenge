@@ -2,12 +2,16 @@ body {
 
 }
 
+.per-todo {
+  background:
+}
+
 .todo {
   border: none;
 }
 
 .container {
-  width: 280px;
+  width: 320px;
 }
 
 .title {

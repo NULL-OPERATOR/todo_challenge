@@ -1,0 +1,9 @@
+{
+  "firebase": "intense-torch-7748",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

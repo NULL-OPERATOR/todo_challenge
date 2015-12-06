@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>2do</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="public/style.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
 
     <script src="js/app.js"></script>
@@ -22,7 +22,7 @@
         <h1 class="list-group-item title">SO MUCH TO DO</h1>
       </div>
 
-      <div class="list-group-item" ng-repeat="todo in todoCtrl.todos">
+      <div class="list-group-item per-todo" ng-repeat="todo in todoCtrl.todos">
         <input type="checkbox" ng-model="todo.done">
         <input class="todo" type="text" value="{{todo.text}}">
         <a href="" ng-click="todoCtrl.moveTodo($index, 'not up')"><span class="downTodo glyphicon glyphicon glyphicon-chevron-down"></span></a>
