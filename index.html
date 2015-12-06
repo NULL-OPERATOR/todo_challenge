@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>2do</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="public/style.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
@@ -16,26 +17,41 @@
   </head>
 
   <body ng-controller="todoController as todoCtrl">
-    <div class="header">
-      <div>
-        <h1>SO MUCH TO DO</h1>
+    <div class="container">
+      <div >
+        <h1 class="list-group-item title">SO MUCH TO DO</h1>
       </div>
-    </div>
 
-      <div class="ui" ng-repeat="todo in todoCtrl.todos">
+      <div class="list-group-item" ng-repeat="todo in todoCtrl.todos">
         <input type="checkbox" ng-model="todo.done">
         <input class="todo" type="text" value="{{todo.text}}">
-        <button class="button downTodo" ng-click="todoCtrl.moveTodo($index, 'not up')">down</button>
-        <button class="button upTodo" ng-click="todoCtrl.moveTodo($index, 'up')">up</button>
-        <button class="button delTodo" ng-click="todoCtrl.deleteTodo($index)">del</button>
+        <a href="" ng-click="todoCtrl.moveTodo($index, 'not up')"><span class="downTodo glyphicon glyphicon glyphicon-chevron-down"></span></a>
+        <a href="" ng-click="todoCtrl.moveTodo($index, 'up')"><span class="upTodo glyphicon glyphicon glyphicon-chevron-up"></span></a>
+        <a href="" ng-click="todoCtrl.deleteTodo($index)"><span class="delTodo glyphicon  glyphicon glyphicon-minus-sign"></span></a>
+
+        <!-- <div class="list-group-item" ng-show="todoText">
+          <input type="checkbox" disabled="true">
+          <input type="text" disabled="true" class="todo" placeholder="{{todoText}}">
+        </div> -->
+
+        <!-- <a href="" class="downTodo" ng-click="todoCtrl.moveTodo($index, 'not up')">
+        <span class-"glyphicon glyphicon-arrow-up"></span></a> -->
+        <!-- <button class="button upTodo" ng-click="todoCtrl.moveTodo($index, 'up')">up</button>
+        <button class="button delTodo" ng-click="todoCtrl.deleteTodo($index)">del</button> -->
+      </div>
+        <div class="list-group-item" ng-show="todoCtrl.todoText">
+          <input type="checkbox" disabled="true">
+          <input class="todo" type="text" disabled="true" placeholder="{{todoCtrl.todoText}}">
+        </div>
+      <div class="list-group-item">
+        <form ng-submit="todoCtrl.addTodo()">
+          <input type="text" ng-model="todoCtrl.todoText">
+          <input class="enterTodo" type="submit" value="Add">
+        </form>
       </div>
 
-  <div class="ui icon buttons">
-    <form ng-submit="todoCtrl.addTodo()">
-      <input type="text" ng-model="todoCtrl.todoText">
-      <input class="enterTodo" type="submit" value="Add">
-    </form>
-  </div>
+    </div>
+
 
   </body>
 </html>

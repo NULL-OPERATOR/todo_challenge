@@ -1,0 +1,17 @@
+body {
+
+}
+
+.todo {
+  border: none;
+}
+
+.container {
+  width: 280px;
+}
+
+.title {
+  background: purple;
+  color: lime;
+  font-style: italic;
+}

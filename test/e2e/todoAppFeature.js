@@ -29,4 +29,10 @@ describe('SO MUCH TO DO', function() {
   // element.all(by.repeater('SUPPORFEED in todo.text'));
 
  });
+ it('moves a todo down', function() {
+   //add more todos
+   element(by.className("downTodo")).click();
+  // element.all(by.repeater('SUPPORFEED in todo.text'));
+
+ });
 });
