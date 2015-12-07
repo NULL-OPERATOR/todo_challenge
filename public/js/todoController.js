@@ -33,5 +33,12 @@ todoApp.controller('todoController', [ "Todos",
       self.todos.splice(index, 1);
     }
 
+    self.setSelectedTitle = function (value) {
+      if (self.selectedTitle === value) {
+          self.selectedTitle = undefined;
+      } else {
+          self.selectedTitle = value;
+      }
+  };
 
 }]);

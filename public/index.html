@@ -22,22 +22,29 @@
         <h1 class="list-group-item title">SO MUCH TO DO</h1>
       </div>
 
+      <div class="list-group-item per-todo">
+        <input type="checkbox" ng-model="todo.done">
+        <input class="todo" type="text" value="">
+        <button
+    type="button"
+    ng-repeat="title in titles"
+    class="btn btn-default"
+    ng-model="selected[title]"
+    btn-checkbox
+    ng-class="{active: title == selectedTitle}"
+    ng-click="setSelectedTitle(title)">{{title}}</button>
+        <!-- <a href="" ng-click="todoCtrl."><span class="allTodo"></span></a>
+        <a href="" ng-click="todoCtrl."><span class="activeTodo"></span></a>
+        <a href="" ng-click="todoCtrl."><span class="completeTodo"></span></a> -->
+        <!-- <a href="" ng-click="todoCtrl."><span class="clearAllTodo"></span></a> -->
+
+      </div>
       <div class="list-group-item per-todo" ng-repeat="todo in todoCtrl.todos">
         <input type="checkbox" ng-model="todo.done">
         <input class="todo" type="text" value="{{todo.text}}">
         <a href="" ng-click="todoCtrl.moveTodo($index, 'not up')"><span class="downTodo glyphicon glyphicon glyphicon-chevron-down"></span></a>
         <a href="" ng-click="todoCtrl.moveTodo($index, 'up')"><span class="upTodo glyphicon glyphicon glyphicon-chevron-up"></span></a>
         <a href="" ng-click="todoCtrl.deleteTodo($index)"><span class="delTodo glyphicon  glyphicon glyphicon-minus-sign"></span></a>
-
-        <!-- <div class="list-group-item" ng-show="todoText">
-          <input type="checkbox" disabled="true">
-          <input type="text" disabled="true" class="todo" placeholder="{{todoText}}">
-        </div> -->
-
-        <!-- <a href="" class="downTodo" ng-click="todoCtrl.moveTodo($index, 'not up')">
-        <span class-"glyphicon glyphicon-arrow-up"></span></a> -->
-        <!-- <button class="button upTodo" ng-click="todoCtrl.moveTodo($index, 'up')">up</button>
-        <button class="button delTodo" ng-click="todoCtrl.deleteTodo($index)">del</button> -->
       </div>
         <div class="list-group-item" ng-show="todoCtrl.todoText">
           <input type="checkbox" disabled="true">
