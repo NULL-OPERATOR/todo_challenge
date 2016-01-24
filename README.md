@@ -1,7 +1,6 @@
 # Todo Challenge
 
-Steps
--------
+**Visit the app here:** https://intense-torch-7748.firebaseapp.com/
 
-1. visit https://intense-torch-7748.firebaseapp.com/
-2. add todos
+Current Status - updating
+
